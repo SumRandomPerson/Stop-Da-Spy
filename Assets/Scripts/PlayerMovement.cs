@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         }    
        if(gameManager.gameOver == false)
         {
+            Debug.Log(velocity.y);
             Vector3 move = transform.right * x + transform.forward*z ;
             controller.Move(move.normalized*speed*Time.deltaTime);
             controller.Move(velocity*Time.deltaTime);
