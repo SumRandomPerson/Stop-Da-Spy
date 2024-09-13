@@ -61,35 +61,35 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetButtonDown("Jump")&& isGrounded)
         {
-            //velocity.y = Mathf.Sqrt(jumpHeight * -2* gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2* gravity);
         }
         
         
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
-        
+            Debug.Log(Input.GetAxis("Horizontal"));
         
         CheckisWalking(x,z);
         velocity.y += gravity*Time.deltaTime;
 
        
        if(isWalking&& gameManager.gameOver == false)
-       {
+        {
+            /*
             if(Time.time - timeAtLastStep > timeBetweenSteps)
             {
                 audioSource.PlayOneShot(walkSounds[Random.Range(0,walkSounds.Length)]);
                 timeAtLastStep = Time.time;
             }
-       }
-
-        
-        if(gameManager.gameOver == false)
+            */
+        }    
+       if(gameManager.gameOver == false)
         {
             Vector3 move = transform.right * x + transform.forward*z ;
             controller.Move(move.normalized*speed*Time.deltaTime);
             controller.Move(velocity*Time.deltaTime);
         }
-        
+
         
         
     }
@@ -109,17 +109,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
-        {
-           
-            if(gameManager.gameOver == false)
-            {
-                EnemyController tree = other.gameObject.GetComponent<EnemyController>();
-                head.isKinematic = false;
-                tree.Kill();
-
-            }
-        }
+        
     }
 }
 
