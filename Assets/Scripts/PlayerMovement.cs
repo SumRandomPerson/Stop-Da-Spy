@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller; 
-    private float speed = 5;
+    public float walkSpeed = 15;
+    public float runSpeed = 30;
+    private float speed = 0;
+
     public float jumpHeight = 3f;
     
     public Transform groundCheck;
@@ -46,15 +49,16 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButton("Run"))
         {
             isRunning = true;
-            speed = 7;
+            speed = runSpeed;
             timeBetweenSteps = 0.5f;
 
         }
         else{
             isRunning = false;
-            speed = 5;
+            speed = walkSpeed;
             timeBetweenSteps = 1f;
         }
+        Debug.Log(isRunning);
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -67,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
-            Debug.Log(Input.GetAxis("Horizontal"));
+            
         
         CheckisWalking(x,z);
         velocity.y += gravity*Time.deltaTime;
