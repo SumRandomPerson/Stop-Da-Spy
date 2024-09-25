@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
         offset = new Vector3(Random.Range(20,50),0,Random.Range(20,50));
         enemy.SetDestination(player.transform.position + offset);
         StartCoroutine(StalkTimers());
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        //gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         
     }
 

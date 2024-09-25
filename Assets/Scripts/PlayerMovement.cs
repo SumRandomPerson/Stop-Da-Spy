@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity*Time.deltaTime;
 
        
-       if(isWalking&& gameManager.gameOver == false)
+       if(isWalking)
         {
             /*
             if(Time.time - timeAtLastStep > timeBetweenSteps)
@@ -87,13 +87,7 @@ public class PlayerMovement : MonoBehaviour
             }
             */
         }    
-       if(gameManager.gameOver == false)
-        {
-            Debug.Log(velocity.y);
-            Vector3 move = transform.right * x + transform.forward*z ;
-            controller.Move(move.normalized*speed*Time.deltaTime);
-            controller.Move(velocity*Time.deltaTime);
-        }
+       
 
         
         
