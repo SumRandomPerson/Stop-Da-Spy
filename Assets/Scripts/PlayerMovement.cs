@@ -44,16 +44,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if grounded using ground check object
         isGrounded = Physics.CheckSphere(groundCheck.position,groundDistance,groundMask);
 
         if(Input.GetButton("Run"))
         {
+            //set running state and change speed and footstep time
             isRunning = true;
             speed = runSpeed;
             timeBetweenSteps = 0.5f;
 
         }
         else{
+            
             isRunning = false;
             speed = walkSpeed;
             timeBetweenSteps = 1f;
@@ -75,6 +78,10 @@ public class PlayerMovement : MonoBehaviour
         
         CheckisWalking(x,z);
         velocity.y += gravity*Time.deltaTime;
+        // move the player
+        Vector3 move = transform.right * x + transform.forward*z ;
+        controller.Move(move.normalized*speed*Time.deltaTime);
+        controller.Move(velocity*Time.deltaTime);
 
        
        if(isWalking)
@@ -92,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         
         
     }
+    //check if player
    void CheckisWalking(float x,float z)
    {
      if(isGrounded)

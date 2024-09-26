@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
     public void Kill()
     {
         audioSource.PlayOneShot(neckSnap);  
-        gameManager.EndGame();
+        
 
     }
 }   

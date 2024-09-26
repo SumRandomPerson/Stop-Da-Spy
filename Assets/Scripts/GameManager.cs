@@ -6,24 +6,43 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Button playButton;
-    public Button quitButton;
-    public Button SettingsButton;
+    public UnityEngine.UI.Button playButton;
+    public UnityEngine.UI.Button quitButton;
+    public UnityEngine.UI.Button settingsButton;
+    public UnityEngine.UI.Button backButton;
+    
+    public GameObject settingsMenu;
+    public GameObject titleScreen;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playButton.onClick.AddListener(StartGame);
+        settingsButton.onClick.AddListener(OpenSettings);
+        backButton.onClick.AddListener(CloseSettings);
     }
 
     // Update is called once per frame
     void Update()
     {
-        playButton.onClick.AddListener(StartGame);
+        
     }
     void StartGame()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level 0"));
+        SceneManager.LoadScene("Level0");
     }
+    void OpenSettings()
+    {
+        titleScreen.SetActive(false);
+        settingsMenu.SetActive(true);
+        
+    }
+    void CloseSettings()
+    {
+        titleScreen.SetActive(true);
+        settingsMenu.SetActive(false);
+        
+    }
+
 }
