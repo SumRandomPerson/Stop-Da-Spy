@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller; 
-    private float speed = 5;
+    public float walkSpeed = 15;
+    public float runSpeed = 30;
+    private float speed = 0;
+
     public float jumpHeight = 3f;
     
     public Transform groundCheck;
@@ -41,20 +44,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if grounded using ground check object
         isGrounded = Physics.CheckSphere(groundCheck.position,groundDistance,groundMask);
 
         if(Input.GetButton("Run"))
         {
+            //set running state and change speed and footstep time
             isRunning = true;
-            speed = 7;
+            speed = runSpeed;
             timeBetweenSteps = 0.5f;
 
         }
         else{
+            
             isRunning = false;
-            speed = 5;
+            speed = walkSpeed;
             timeBetweenSteps = 1f;
         }
+        Debug.Log(isRunning);
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -67,13 +74,17 @@ public class PlayerMovement : MonoBehaviour
         
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
-            Debug.Log(Input.GetAxis("Horizontal"));
+            
         
         CheckisWalking(x,z);
         velocity.y += gravity*Time.deltaTime;
+        // move the player
+        Vector3 move = transform.right * x + transform.forward*z ;
+        controller.Move(move.normalized*speed*Time.deltaTime);
+        controller.Move(velocity*Time.deltaTime);
 
        
-       if(isWalking&& gameManager.gameOver == false)
+       if(isWalking)
         {
             /*
             if(Time.time - timeAtLastStep > timeBetweenSteps)
@@ -83,16 +94,12 @@ public class PlayerMovement : MonoBehaviour
             }
             */
         }    
-       if(gameManager.gameOver == false)
-        {
-            Vector3 move = transform.right * x + transform.forward*z ;
-            controller.Move(move.normalized*speed*Time.deltaTime);
-            controller.Move(velocity*Time.deltaTime);
-        }
+       
 
         
         
     }
+    //check if player
    void CheckisWalking(float x,float z)
    {
      if(isGrounded)
