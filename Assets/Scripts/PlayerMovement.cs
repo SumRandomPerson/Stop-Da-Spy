@@ -7,11 +7,15 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller; 
     public float walkSpeed = 15;
     public float runSpeed = 30;
+    public int MaxJumps = 0;
+    private int jumps;
     private float speed = 0;
 
     public float jumpHeight = 3f;
     
     public Transform groundCheck;
+    public Transform wallCheckLeft;
+    public Transform wallCheckRight;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
@@ -23,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isWalking = false;
     private bool isRunning = false;
+    private bool isTouchingWall = false;
     public Rigidbody head;
     private float timeAtLastStep;
    
@@ -39,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        jumps = MaxJumps;
     }
 
     // Update is called once per frame
@@ -46,6 +52,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // check if grounded using ground check object
         isGrounded = Physics.CheckSphere(groundCheck.position,groundDistance,groundMask);
+        isTouchingWall = Physics.CheckSphere(wallCheckLeft.position,groundDistance,groundMask) || Physics.CheckSphere(wallCheckRight.position,groundDistance,groundMask);
+        if(isTouchingWall) Debug.Log("Stranger Danger");
+        if(isGrounded)
+        {
+            jumps = MaxJumps;
+
+        }
 
         if(Input.GetButton("Run"))
         {
@@ -61,14 +74,16 @@ public class PlayerMovement : MonoBehaviour
             speed = walkSpeed;
             timeBetweenSteps = 1f;
         }
-        Debug.Log(isRunning);
+        
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-        if(Input.GetButtonDown("Jump")&& isGrounded)
+        if(Input.GetButtonDown("Jump") && jumps > 0)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2* gravity);
+            jumps -=1;
+            Debug.Log(jumps);
         }
         
         
