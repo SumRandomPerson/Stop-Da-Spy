@@ -1,34 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 
 public class GameManager : MonoBehaviour
 {
-    public bool gameOver = false;
+    public UnityEngine.UI.Button playButton;
+    public UnityEngine.UI.Button quitButton;
+    public UnityEngine.UI.Button settingsButton;
+    public UnityEngine.UI.Button backButton;
+    
+    public GameObject settingsMenu;
+    public GameObject titleScreen;
     
 
-
-
-    public void EndGame()
-    {
-        gameOver = true;
-        StartCoroutine(EndTimer());
-        Debug.Log("End");
-    }
-    IEnumerator EndTimer()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(scene.name);
-        
-           
-    }
     // Start is called before the first frame update
     void Start()
     {
-        Scene scene = SceneManager.GetActiveScene();
+        playButton.onClick.AddListener(StartGame);
+        settingsButton.onClick.AddListener(OpenSettings);
+        backButton.onClick.AddListener(CloseSettings);
     }
 
     // Update is called once per frame
@@ -36,4 +28,21 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    void StartGame()
+    {
+        SceneManager.LoadScene("Level0");
+    }
+    void OpenSettings()
+    {
+        titleScreen.SetActive(false);
+        settingsMenu.SetActive(true);
+        
+    }
+    void CloseSettings()
+    {
+        titleScreen.SetActive(true);
+        settingsMenu.SetActive(false);
+        
+    }
+
 }
