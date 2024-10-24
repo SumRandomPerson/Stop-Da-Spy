@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Forest.unity
-=======
 - path: Assets/Scenes/MainMenu.unity
->>>>>>> 56b1e63336282fcf670f0a7d911ff52de8ad392a
   isLoaded: 1
   isActive: 1
   isSubScene: 0
