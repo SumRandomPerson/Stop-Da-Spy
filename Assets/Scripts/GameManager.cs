@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     
     public GameObject settingsMenu;
     public GameObject titleScreen;
+
+    bool paused = false;
     
 
     // Start is called before the first frame update
