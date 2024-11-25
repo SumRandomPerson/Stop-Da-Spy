@@ -23,6 +23,7 @@ AssetImportWorker0
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 49986
 Successfully changed project path to: /Users/game56/Documents/GitHub/Stop-Da-Spy
 Could not lock editor preferences. Preferences updates for this instance of Unity will not be saved./Users/game56/Documents/GitHub/Stop-Da-Spy
@@ -35,11 +36,19 @@ Could not lock editor preferences. Preferences updates for this instance of Unit
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 31.18 ms, found 2 plugins.
 >>>>>>> Stashed changes
+=======
+56108
+Successfully changed project path to: /Users/game56/Documents/GitHub/Stop-Da-Spy
+/Users/game56/Documents/GitHub/Stop-Da-Spy
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 31.18 ms, found 2 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.27f1 (e759542391ea)
 [Subsystems] Discovering subsystems at path /Applications/2020.3.27f1/Unity.app/Contents/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /Users/game56/Documents/GitHub/Stop-Da-Spy/Assets
 GfxDevice: creating device client; threaded=0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 2024-11-04 13:28:49.683 Unity[2262:48837] iMac preferred device: AMD Radeon Pro 5500 XT (high power)
 2024-11-04 13:28:49.683 Unity[2262:48837] Metal devices available: 1
@@ -51,11 +60,18 @@ GfxDevice: creating device client; threaded=0
 2024-11-06 13:48:36.152 Unity[9377:255259] 0: AMD Radeon Pro 5500 XT (high power)
 2024-11-06 13:48:36.152 Unity[9377:255259] Using device AMD Radeon Pro 5500 XT (high power)
 >>>>>>> Stashed changes
+=======
+2024-11-04 13:37:51.823 Unity[86816:8508833] iMac preferred device: AMD Radeon Pro 5500 XT (high power)
+2024-11-04 13:37:51.823 Unity[86816:8508833] Metal devices available: 1
+2024-11-04 13:37:51.823 Unity[86816:8508833] 0: AMD Radeon Pro 5500 XT (high power)
+2024-11-04 13:37:51.823 Unity[86816:8508833] Using device AMD Radeon Pro 5500 XT (high power)
+>>>>>>> Stashed changes
 Initializing Metal device caps: AMD Radeon Pro 5500 XT
 Initialize mono
 Mono path[0] = '/Applications/2020.3.27f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/2020.3.27f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/2020.3.27f1/Unity.app/Contents/MonoBleedingEdge/etc'
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56262
 Begin MonoManager ReloadAssembly
@@ -84,11 +100,27 @@ Domain Reload Profiling:
 	ReloadAssembly (520ms)
 >>>>>>> Stashed changes
 		BeginReloadAssembly (35ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56816
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/2020.3.27f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000457 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 29.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.517 seconds
+Domain Reload Profiling:
+	ReloadAssembly (517ms)
+		BeginReloadAssembly (37ms)
+>>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 		EndReloadAssembly (421ms)
 			LoadAssemblies (34ms)
@@ -115,6 +147,21 @@ Domain Reload Profiling:
 =======
 				ProcessInitializeOnLoadAttributes (90ms)
 >>>>>>> Stashed changes
+=======
+		EndReloadAssembly (415ms)
+			LoadAssemblies (36ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (155ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (157ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (30ms)
+				BeforeProcessingInitializeOnLoad (7ms)
+				ProcessInitializeOnLoadAttributes (91ms)
+>>>>>>> Stashed changes
 				ProcessInitializeOnLoadMethodAttributes (26ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -122,6 +169,7 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Registered in 0.001475 seconds.
 =======
@@ -176,12 +224,43 @@ Domain Reload Profiling:
 				BeforeProcessingInitializeOnLoad (44ms)
 				ProcessInitializeOnLoadAttributes (195ms)
 >>>>>>> Stashed changes
+=======
+Registered in 0.001623 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.945 seconds
+Domain Reload Profiling:
+	ReloadAssembly (946ms)
+		BeginReloadAssembly (133ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (752ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (289ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (259ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (46ms)
+				ProcessInitializeOnLoadAttributes (198ms)
+>>>>>>> Stashed changes
 				ProcessInitializeOnLoadMethodAttributes (8ms)
 				AfterProcessingInitializeOnLoad (1ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Validating Project structure ... 0.003602 seconds.
 Shader import version has changed; will reimport all shaders...
@@ -190,6 +269,11 @@ Upgrading shader files ...0.014754 seconds.
 Validating Project structure ... 0.003606 seconds.
 Shader import version has changed; will reimport all shaders...
 Upgrading shader files ...0.022021 seconds.
+>>>>>>> Stashed changes
+=======
+Validating Project structure ... 0.004106 seconds.
+Shader import version has changed; will reimport all shaders...
+Upgrading shader files ...0.017470 seconds.
 >>>>>>> Stashed changes
 Application.AssetDatabase Initial Script Refresh Start
 RefreshInfo: InitialScriptRefreshV2(NoUpdateAssetOptions) scanfilter:  ... 1 filters
@@ -204,6 +288,7 @@ Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
 Initializing Unity extensions:
 ========================================================================
 Worker process is ready to serve import requests
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Refreshing native plugins compatible for Editor in 0.35 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -223,6 +308,16 @@ System memory in use after: 203.9 MB.
 Unloading 105 unused Assets to reduce memory usage. Loaded Objects now: 2372.
 Total: 2.712327 ms (FindLiveObjects: 0.129292 ms CreateObjectMapping: 0.057976 ms MarkObjects: 1.972538 ms  DeleteObjects: 0.551987 ms)
 >>>>>>> Stashed changes
+=======
+Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1905 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 204.2 MB.
+System memory in use after: 203.0 MB.
+
+Unloading 107 unused Assets to reduce memory usage. Loaded Objects now: 2371.
+Total: 2.804434 ms (FindLiveObjects: 0.136321 ms CreateObjectMapping: 0.061769 ms MarkObjects: 1.995322 ms  DeleteObjects: 0.610437 ms)
+>>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -234,6 +329,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+<<<<<<< Updated upstream
 ========================================================================
 Received Import Request.
 <<<<<<< Updated upstream
@@ -385,4 +481,7 @@ Start importing Assets/Scripts/PlayerMovement.cs using Guid(19407ae9589a84131800
   ERROR: Build asset version error: assets/scripts/playermovement.cs in SourceAssetDB has modification time of '2024-09-26T17:50:20Z' while content on disk has modification time of '2024-11-06T18:47:55Z'
   Import took 0.004375 seconds .
 
+>>>>>>> Stashed changes
+=======
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
 >>>>>>> Stashed changes
