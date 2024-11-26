@@ -819,6 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2859403090711095908}
+  - component: {fileID: 5556370652397930901}
   m_Layer: 0
   m_Name: tinker 1
   m_TagString: Untagged
@@ -835,7 +836,7 @@ Transform:
   m_GameObject: {fileID: 3235118740031762654}
   m_LocalRotation: {x: -0.70422256, y: -0, z: -0, w: 0.7099793}
   m_LocalPosition: {x: -14.87, y: 37.79, z: 0.61026925}
-  m_LocalScale: {x: 0.008535218, y: 0.008535218, z: 0.008535218}
+  m_LocalScale: {x: 0.0071112784, y: 0.0071112784, z: 0.0071112784}
   m_Children:
   - {fileID: 5305278997860645233}
   - {fileID: 1641316382348004601}
@@ -863,6 +864,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.534, y: 0, z: 0}
+--- !u!65 &5556370652397930901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235118740031762654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 257.58905, y: 128.43, z: 214.86801}
+  m_Center: {x: 1.6537021, y: -4.8509855, z: 77.30342}
 --- !u!1 &3336451314449407066
 GameObject:
   m_ObjectHideFlags: 0
