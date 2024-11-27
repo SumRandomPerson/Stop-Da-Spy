@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2613587090419477000}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: 0.37800014, z: 0.089}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -203,14 +203,17 @@ MonoBehaviour:
   MaxJumps: 0
   jumpHeight: 3
   groundCheck: {fileID: 2613587091515166903}
+  wallCheckLeft: {fileID: 0}
+  wallCheckRight: {fileID: 0}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 128
   walkSounds: []
   timeBetweenSteps: 1
-  head: {fileID: 0}
-  gravity: -9.81
+  head: {fileID: 2613587090419477000}
+  projectilePrefab: {fileID: 1967071401916857726, guid: 489b690b31749ee4e9bc69c7133d5375, type: 3}
+  gravityScale: 1
 --- !u!143 &2613587090802991742
 CharacterController:
   m_ObjectHideFlags: 0
