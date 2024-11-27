@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isRunning = false;
     private bool isTouchingWall = false;
     
-    public Rigidbody head;
+    
+    public GameObject head;
+    public GameObject projectilePrefab;
     private float timeAtLastStep;
     public enum State
     {
@@ -133,9 +135,16 @@ public class PlayerMovement : MonoBehaviour
             }
             */
         }    
+
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            ShootProjectile();
+        }
        
 
-        Debug.Log(state);
+       
+       // Debug.Log(state);
         
     }
     //check if player
@@ -152,6 +161,10 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
+    }
+    void ShootProjectile()
+    {
+        Instantiate(projectilePrefab,head.transform.position, head.transform.rotation);
     }
     void OnTriggerEnter(Collider other)
     {
