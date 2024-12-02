@@ -9,8 +9,12 @@ public class Projectile : MonoBehaviour
     void Start()
     {
 
-        transform.Translate(Vector3.forward*15 * Time.deltaTime);
         
+        
+    }
+    void Update()
+    {
+        transform.Translate(Vector3.forward*15 * Time.deltaTime);
     }
     public int GetDamage()
     {   
