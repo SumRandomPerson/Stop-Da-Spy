@@ -10,16 +10,24 @@ public class Projectile : MonoBehaviour
     {
 
         
-        
     }
     void Update()
     {
         transform.Translate(Vector3.forward*15 * Time.deltaTime);
     }
-    public int GetDamage()
+    public void DealDamageTo(GameObject enemy)
     {   
-        return damage;
-        Destroy(gameObject);
+        EnemyAI ai = enemy.GetComponent<EnemyAI>();
+        ai.TakeDamage(damage);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            DealDamageTo(other.gameObject);
+            Destroy(gameObject);
+            Debug.Log("hit");
+        }
         
     }
 }

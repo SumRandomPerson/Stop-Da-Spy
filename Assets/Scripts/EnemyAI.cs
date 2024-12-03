@@ -23,13 +23,10 @@ public class EnemyAI : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter(Collider collider)
+
+    public void TakeDamage(int damage)
     {
-        if(collider.CompareTag("Projectile"))
-        {
-            Debug.Log("hit");
-            Projectile projectileScript = collider.GetComponent<Projectile>();
-            hp -= projectileScript.GetDamage();
-        }
+        hp -= damage;
+        Debug.Log(gameObject + " Took " + damage + " Damage");
     }
 }
