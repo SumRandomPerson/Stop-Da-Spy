@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playButton.onClick.AddListener(StartGame);
+        quitButton.onClick.AddListener(EndGame);
         settingsButton.onClick.AddListener(OpenSettings);
         backButton.onClick.AddListener(CloseSettings);
     }
@@ -46,5 +47,11 @@ public class GameManager : MonoBehaviour
         settingsMenu.SetActive(false);
         
     }
-
+    void EndGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
+
+
