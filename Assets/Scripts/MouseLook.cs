@@ -24,7 +24,7 @@ public class MouseLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation,-90,90);
 
-        transform.localRotation = Quaternion.Euler(xRotation,0.0f,0.0f);
+        transform.localRotation = Quaternion.Euler(xRotation,0.0f,5);
         player.Rotate(Vector3.up * mouseX);
     }
 }
