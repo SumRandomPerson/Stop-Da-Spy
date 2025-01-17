@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
             break;
             case State.InAir:
             // move the player
-            
+            TiltCameraDegrees(0f,0.05f);
             move = transform.right * x + transform.forward*z;
             controller.Move(move.normalized*speed*Time.deltaTime);
             velocity.y += gravity*Time.deltaTime * gravityScale;
@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void ShootProjectile()
     {
-        Instantiate(projectilePrefab,head.transform.position, head.transform.rotation);
+        Instantiate(projectilePrefab, head.transform.position, head.transform.rotation);
     }
     void OnTriggerEnter(Collider other)
     {
