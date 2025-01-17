@@ -39,7 +39,7 @@ public class EnemyAI : MonoBehaviour
      IEnumerator ResetCooldown()
     {
                
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(Random.Range(4,6));
         shotCooldown = false;
                 
     }

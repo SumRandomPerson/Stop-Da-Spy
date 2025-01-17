@@ -97,6 +97,14 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move.normalized*speed*Time.deltaTime);
             velocity.y += gravity*Time.deltaTime * gravityScale;
             controller.Move(velocity*Time.deltaTime);
+            if(x < 0)
+            {
+                TiltCameraDegrees(10f,0.05f);
+            }else if(x > 0)
+            {
+                TiltCameraDegrees(-10f,0.05f);
+            }else  TiltCameraDegrees(0f,0.05f);
+            
             if(!isMoving && isGrounded) state = State.Idle;
             if(!isGrounded)
             {
@@ -117,11 +125,12 @@ public class PlayerMovement : MonoBehaviour
                 state = State.Walking;
                 jumps = maxJumps;
             }
+            
              
             break;
             case State.Idle:
             // move the player
-            
+            TiltCameraDegrees(0f,0.05f);
             move = transform.right * x + transform.forward*z;
             controller.Move(move.normalized*speed*Time.deltaTime);
             velocity.y += gravity*Time.deltaTime * gravityScale;
@@ -224,6 +233,10 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         
+    }
+    void TiltCameraDegrees(float target, float interpo)
+    {
+        lookScript.SetTilt(Mathf.Lerp(lookScript.GetTilt(),target,interpo));
     }
 }
 
