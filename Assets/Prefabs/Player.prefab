@@ -203,8 +203,8 @@ MonoBehaviour:
   MaxJumps: 0
   jumpHeight: 3
   groundCheck: {fileID: 2613587091515166903}
-  wallCheckLeft: {fileID: 0}
-  wallCheckRight: {fileID: 0}
+  wallCheckLeft: {fileID: 9062135162712440046}
+  wallCheckRight: {fileID: 2460927785879741589}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9062135162712440046}
   m_Layer: 0
-  m_Name: WallCheckRight
+  m_Name: WallCheckLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2460927785879741589}
   m_Layer: 0
-  m_Name: WallCheckLeft
+  m_Name: WallCheckRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

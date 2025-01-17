@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(Vector3.forward*15 * Time.deltaTime);
+        transform.Translate(Vector3.forward*50 * Time.deltaTime);
     }
     public void DealDamageTo(GameObject enemy)
     {   

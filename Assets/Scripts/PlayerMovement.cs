@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller; 
     public float walkSpeed = 15;
     public float runSpeed = 30;
-    public int MaxJumps = 0;
+    public int maxJumps = 2;
     private int jumps;
     private float speed = 0;
 
@@ -27,11 +27,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isMoving = false;
     private bool isRunning = false;
-    private bool isTouchingWall = false;
+    //private bool isTouchingWall = false;
     
     
     public GameObject head;
     public GameObject projectilePrefab;
+    private MouseLook lookScript;
     private float timeAtLastStep;
     public enum State
     {
@@ -52,37 +53,108 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        lookScript = head.gameObject.GetComponent<MouseLook>();
         timeAtLastStep = Time.time;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        jumps = MaxJumps;
+        jumps = maxJumps;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Get Movement
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
         
         // check if grounded using ground check object
         isGrounded = Physics.CheckSphere(groundCheck.position,groundDistance,groundMask);
         //check if touching any wall using wall check objects
-        isTouchingWall = Physics.CheckSphere(wallCheckLeft.position,groundDistance,groundMask) || Physics.CheckSphere(wallCheckRight.position,groundDistance,groundMask);
-        if(isTouchingWall) Debug.Log("Stranger Danger");
+        bool isTouchingWallRight = Physics.CheckSphere(wallCheckRight.position,groundDistance,groundMask);
+        bool isTouchingWallLeft  = Physics.CheckSphere(wallCheckLeft.position,groundDistance,groundMask);
+        if(isTouchingWallRight) Debug.Log("Wall on right");
+        if(isTouchingWallLeft) Debug.Log("Wall on left");
+
 
 
         //check if moving on ground or standing still
-        if(isMoving && isGrounded)
+        if(Input.GetButtonDown("Jump") && jumps > 0)
         {
-            state = State.Walking;
-            jumps = MaxJumps;
-        }else if(!isMoving && isGrounded)
-        {
-            state = State.Idle;
-            jumps = MaxJumps;
-        }else if(!isGrounded)
-        {
-            state = State.InAir;
+            velocity.y = Mathf.Sqrt(jumpHeight * -2* gravity*gravityScale);
+            jumps -=1;
+            Debug.Log(jumps);
         }
+       
+
+
+        switch(state)
+        {
+            case State.Walking:
+            // move the player
+            
+            Vector3 move = transform.right * x + transform.forward*z;
+            controller.Move(move.normalized*speed*Time.deltaTime);
+            velocity.y += gravity*Time.deltaTime * gravityScale;
+            controller.Move(velocity*Time.deltaTime);
+            if(x < 0)
+            {
+                TiltCameraDegrees(10f,0.05f);
+            }else if(x > 0)
+            {
+                TiltCameraDegrees(-10f,0.05f);
+            }else  TiltCameraDegrees(0f,0.05f);
+            
+            if(!isMoving && isGrounded) state = State.Idle;
+            if(!isGrounded)
+            {
+                state = State.InAir;
+            }
+           
+             
+            break;
+            case State.InAir:
+            // move the player
+            
+            move = transform.right * x + transform.forward*z;
+            controller.Move(move.normalized*speed*Time.deltaTime);
+            velocity.y += gravity*Time.deltaTime * gravityScale;
+            controller.Move(velocity*Time.deltaTime);
+            if(isGrounded)
+            {
+                state = State.Walking;
+                jumps = maxJumps;
+            }
+            
+             
+            break;
+            case State.Idle:
+            // move the player
+            TiltCameraDegrees(0f,0.05f);
+            move = transform.right * x + transform.forward*z;
+            controller.Move(move.normalized*speed*Time.deltaTime);
+            velocity.y += gravity*Time.deltaTime * gravityScale;
+            controller.Move(velocity*Time.deltaTime);
+            if(isMoving && isGrounded)
+            {
+                state = State.Walking;
+                
+            }
+            if(!isGrounded)
+            {
+                state = State.InAir;
+            }
+             
+            break;
+        }
+       
+       
+        
+
+
+
+
+
 
         if(Input.GetButton("Run"))
         {
@@ -98,35 +170,27 @@ public class PlayerMovement : MonoBehaviour
             speed = walkSpeed;
             timeBetweenSteps = 1f;
         }
-        
+        //bring player to the floor if not on it
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+
         //player gets extra jump when starting on platform for some reason
         //help
-        if(Input.GetButtonDown("Jump") && jumps > 0)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2* gravity*gravityScale);
-            jumps -=1;
-            Debug.Log(jumps);
-        }
         
         
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+        
+           
             
         
         CheckisMoving(x,z);
-        velocity.y += gravity*Time.deltaTime * gravityScale;
-        // move the player
-        Vector3 move = transform.right * x + transform.forward*z ;
-        controller.Move(move.normalized*speed*Time.deltaTime);
-        controller.Move(velocity*Time.deltaTime);
+       
+        
 
        
        if(isMoving)
-        {
+        {//unused footstep logic
             /*
             if(Time.time - timeAtLastStep > timeBetweenSteps)
             {
@@ -147,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
        // Debug.Log(state);
         
     }
-    //check if player
+    //check if player moving
    void CheckisMoving(float x,float z)
    {
      
@@ -169,6 +233,10 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         
+    }
+    void TiltCameraDegrees(float target, float interpo)
+    {
+        lookScript.SetTilt(Mathf.Lerp(lookScript.GetTilt(),target,interpo));
     }
 }
 
