@@ -14,14 +14,14 @@ public class PauseScreen : MonoBehaviour
     public UnityEngine.UI.Button backButton;
 
     public GameObject pauseMenu;
-    private GameManager gameManager;
+    private MainMenu gameManager;
     
 
     bool paused = false;
     // Start is called before the first frame update
     void Start()
     {
-        GameManager gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        MainMenu mainMenu = GameObject.Find("Game Manager").GetComponent<MainMenu>();
         resumeButton.onClick.AddListener(Unpause);
     }
 
