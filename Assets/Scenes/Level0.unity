@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18349,8 +18349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resumeButton: {fileID: 1514623026}
   quitButton: {fileID: 0}
-  settingsButton: {fileID: 0}
-  backButton: {fileID: 0}
+  settingsButton: {fileID: 1643904817}
+  backButton: {fileID: 1514623026}
   pauseMenu: {fileID: 1166914792}
 --- !u!1 &1460622141
 GameObject:
@@ -18929,6 +18929,10 @@ PrefabInstance:
     - target: {fileID: 457341289012173265, guid: f88458ee643e14210af3a4b46055c2e4, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 457341289012173270, guid: f88458ee643e14210af3a4b46055c2e4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 457341289012173291, guid: f88458ee643e14210af3a4b46055c2e4, type: 3}
       propertyPath: m_RootOrder

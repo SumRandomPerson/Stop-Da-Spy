@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip[] walkSounds;
     private AudioSource audioSource;
-    private GameManager gameManager;
+
     public float timeBetweenSteps = 1f;
 
     private bool isMoving = false;
@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         timeAtLastStep = Time.time;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         jumps = maxJumps;
     }
 
@@ -74,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         bool isTouchingWallRight = Physics.CheckSphere(wallCheckRight.position,groundDistance,groundMask);
         bool isTouchingWallLeft  = Physics.CheckSphere(wallCheckLeft.position,groundDistance,groundMask);
         if(isTouchingWallRight) Debug.Log("Wall on right");
-        if(isTouchingWallLeft) Debug.Log("Wall on left");
+       // if(isTouchingWallLeft) Debug.Log("Wall on left");
 
 
 
@@ -97,14 +96,18 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move.normalized*speed*Time.deltaTime);
             velocity.y += gravity*Time.deltaTime * gravityScale;
             controller.Move(velocity*Time.deltaTime);
-            if(x < 0)
+            if(isRunning)
             {
-                TiltCameraDegrees(10f,0.05f);
-            }else if(x > 0)
-            {
-                TiltCameraDegrees(-10f,0.05f);
-            }else  TiltCameraDegrees(0f,0.05f);
+                
             
+                if(x < 0 && !isTouchingWallLeft)
+                {
+                    TiltCameraDegrees(10f,0.05f);
+                }else if(x > 0 && !isTouchingWallRight )
+                {
+                    TiltCameraDegrees(-10f,0.05f);
+                }else  TiltCameraDegrees(0f,0.05f);
+            }else  TiltCameraDegrees(0f,0.05f);
             if(!isMoving && isGrounded) state = State.Idle;
             if(!isGrounded)
             {
@@ -120,6 +123,18 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move.normalized*speed*Time.deltaTime);
             velocity.y += gravity*Time.deltaTime * gravityScale;
             controller.Move(velocity*Time.deltaTime);
+
+            //check if moving down
+            if(controller.velocity.y <= 0)
+            {
+                
+                if(isTouchingWallLeft || isTouchingWallLeft)
+                {
+                    
+                    state = State.Wallrunning;
+                }
+
+            }
             if(isGrounded)
             {
                 state = State.Walking;
@@ -143,6 +158,34 @@ public class PlayerMovement : MonoBehaviour
             if(!isGrounded)
             {
                 state = State.InAir;
+            }
+             
+            break;
+            case State.Wallrunning:
+            
+            gravity = -3;
+            // move the player and remove ability to move
+            move = transform.right * x + transform.forward*z;
+            controller.Move(move.normalized*speed*Time.deltaTime);
+            velocity.y += gravity*Time.deltaTime * gravityScale;
+            controller.Move(velocity*Time.deltaTime);
+            if(isTouchingWallLeft)
+            {
+                TiltCameraDegrees(-10f,0.05f);
+            }else if(isTouchingWallRight)
+            {
+                Debug.Log("wallrun");
+                TiltCameraDegrees(10f,0.05f);
+            }else
+            {
+                gravity = -9.81f;
+                state = State.InAir;
+            }
+            if(isGrounded)
+            {
+                gravity = -9.81f;
+                state = State.Walking;
+                jumps = maxJumps;
             }
              
             break;
