@@ -128,9 +128,10 @@ public class PlayerMovement : MonoBehaviour
             if(controller.velocity.y <= 0)
             {
                 
-                if(isTouchingWallLeft || isTouchingWallLeft)
+                if(isTouchingWallLeft || isTouchingWallRight)
                 {
-                    
+                    velocity.y = 0;
+                    jumps = maxJumps;
                     state = State.Wallrunning;
                 }
 
@@ -164,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
             case State.Wallrunning:
             
             gravity = -3;
+            Debug.Log("wallrun");
             // move the player and remove ability to move
             move = transform.right * x + transform.forward*z;
             controller.Move(move.normalized*speed*Time.deltaTime);
@@ -174,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
                 TiltCameraDegrees(-10f,0.05f);
             }else if(isTouchingWallRight)
             {
-                Debug.Log("wallrun");
+                
                 TiltCameraDegrees(10f,0.05f);
             }else
             {
