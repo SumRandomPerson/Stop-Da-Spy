@@ -8,8 +8,13 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine("DestroyProjectile");
         
+    }
+    IEnumerator DestroyProjectile()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
     void Update()
     {
@@ -30,4 +35,5 @@ public class Projectile : MonoBehaviour
         }
         
     }
+    
 }
