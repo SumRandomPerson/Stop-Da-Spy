@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private State state = State.Walking;
    
 
-    private float gravity = -9.81f;
+    private float gravity = -9.81f*2;
     public float gravityScale = 1f;
     // Start is called before the first frame update
 
