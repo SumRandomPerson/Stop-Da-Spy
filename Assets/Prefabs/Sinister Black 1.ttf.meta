@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d0e8307447dd04e68a4955bd2607e1ae
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sinister Black
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c8a170509cbb4421eaca1d2e7c37314b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
