@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2613587090419477000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.37800014, z: 0.089}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2613587090802991743}
@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 2613587090802991736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2613587090419477005}
   - {fileID: 2613587091515166903}
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2613587090802991742}
-  walkSpeed: 15
-  runSpeed: 30
-  MaxJumps: 0
+  walkSpeed: 7
+  runSpeed: 14
+  maxJumps: 2
   jumpHeight: 3
   groundCheck: {fileID: 2613587091515166903}
   wallCheckLeft: {fileID: 9062135162712440046}
