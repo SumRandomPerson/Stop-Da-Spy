@@ -959,14 +959,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19407ae9589a84131800d88148bbec30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 1173733212}
   walkSpeed: 15
   runSpeed: 30
   maxJumps: 2
   jumpHeight: 3
-  groundCheck: {fileID: 0}
-  wallCheckLeft: {fileID: 0}
-  wallCheckRight: {fileID: 0}
+  groundCheck: {fileID: 1478591523}
+  wallCheckLeft: {fileID: 1438804239}
+  wallCheckRight: {fileID: 788837677}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
