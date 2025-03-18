@@ -3,7 +3,13 @@ guid: 19407ae9589a84131800d88148bbec30
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - controller: {instanceID: 0}
+  - groundCheck: {instanceID: 0}
+  - wallCheckLeft: {instanceID: 0}
+  - wallCheckRight: {instanceID: 0}
+  - head: {instanceID: 0}
+  - projectilePrefab: {fileID: 1967071401916857726, guid: 489b690b31749ee4e9bc69c7133d5375, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public Transform player; 
+    public Transform player;
+    private float tilt = 0f;
     
     public float sensitivity = 1;
     float xRotation = 0.0f;
@@ -24,7 +25,15 @@ public class MouseLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation,-90,90);
 
-        transform.localRotation = Quaternion.Euler(xRotation,0.0f,0.0f);
+        transform.localRotation = Quaternion.Euler(xRotation,0.0f,tilt);
         player.Rotate(Vector3.up * mouseX);
+    }
+    public void SetTilt(float t)
+    {
+        tilt = t;
+    }
+     public float GetTilt()
+    {
+        return tilt;
     }
 }
