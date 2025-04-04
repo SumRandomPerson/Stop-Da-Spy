@@ -24,7 +24,15 @@ public class MovingStairs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime -= Time.deltaTime;
+        if (playerMovementScript.timeStop == false)
+        {
+                MoveStairs();
+        }
+    }
+
+    public void MoveStairs()
+    {
+                currentTime -= Time.deltaTime;
 
         if(currentTime < 1)
         {
