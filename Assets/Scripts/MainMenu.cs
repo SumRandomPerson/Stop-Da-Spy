@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
     }
     void StartGame()
     {
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene("Level 1");
     }
     void OpenSettings()
     {
