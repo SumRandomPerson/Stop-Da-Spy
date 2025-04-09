@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isMoving = false;
     private bool isRunning = false;
+    public bool timeStop = false; 
     //private bool isTouchingWall = false;
     
     
@@ -40,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         Walking,
         InAir,
         Wallrunning,
+        TimeStop,
+        TimeStart,
     }
     private State state = State.Walking;
    
@@ -191,9 +194,19 @@ public class PlayerMovement : MonoBehaviour
             }
              
             break;
+
+            case State.TimeStop:
+                timeStop = true;
+            break;
+            case State.TimeStart:
+                timeStop = false;
+            break;
         }
        
-       
+       if(Input.GetKeyDown(KeyCode.E))
+       {
+        timeStop = !timeStop;
+       }
         
 
 
