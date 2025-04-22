@@ -14,7 +14,9 @@ public class PauseScreen : MonoBehaviour
     public UnityEngine.UI.Button backButton;
 
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     private MainMenu gameManager;
+    
     
 
     bool paused = false;
@@ -23,6 +25,10 @@ public class PauseScreen : MonoBehaviour
     {
         MainMenu mainMenu = GameObject.Find("Game Manager").GetComponent<MainMenu>();
         resumeButton.onClick.AddListener(Unpause);
+        quitButton.onClick.AddListener(EndGame);
+        settingsButton.onClick.AddListener(OpenSettings);
+        backButton.onClick.AddListener(CloseSettings);
+
     }
 
     // Update is called once per frame
@@ -59,5 +65,23 @@ public class PauseScreen : MonoBehaviour
         pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        settingsMenu.SetActive(false);
+    }
+     void OpenSettings()
+    {
+        pauseMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+        
+    }
+    void CloseSettings()
+    {
+        pauseMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+        
+    }
+    void EndGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }
