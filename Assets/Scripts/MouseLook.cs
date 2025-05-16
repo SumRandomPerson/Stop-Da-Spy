@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public Transform player;
-    private float tilt = 0f;
+    public Transform player; 
     
     public float baseSensitivity = 1;
     private PauseScreen pauseMenu;
@@ -28,15 +27,7 @@ public class MouseLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation,-90,90);
 
-        transform.localRotation = Quaternion.Euler(xRotation,0.0f,tilt);
+        transform.localRotation = Quaternion.Euler(xRotation,0.0f,0.0f);
         player.Rotate(Vector3.up * mouseX);
-    }
-    public void SetTilt(float t)
-    {
-        tilt = t;
-    }
-     public float GetTilt()
-    {
-        return tilt;
     }
 }
