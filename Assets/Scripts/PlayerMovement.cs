@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isMoving = false;
     private bool isRunning = false;
-    public bool timeStop = false; 
+    private bool timeStop = false; 
+    private bool ispaused = false;
     //private bool isTouchingWall = false;
     
     
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     private MouseLook lookScript;
     private float timeAtLastStep;
+    private TimeManager time;
     public enum State
     {
         Idle,
@@ -61,11 +63,13 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         jumps = maxJumps;
+        time = GameObject.Find("Game Manager").GetComponent<TimeManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //Get Movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

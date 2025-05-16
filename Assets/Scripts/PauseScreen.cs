@@ -8,14 +8,20 @@ using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
 {
+
     public UnityEngine.UI.Button resumeButton;
     public UnityEngine.UI.Button quitButton;
     public UnityEngine.UI.Button settingsButton;
     public UnityEngine.UI.Button backButton;
-
     public GameObject pauseMenu;
     public GameObject settingsMenu;
+    public Slider audioSlider;
+    public Slider sensitvitySlider;
+
+    
     private MainMenu gameManager;
+   
+   
     
     
 
@@ -23,17 +29,18 @@ public class PauseScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MainMenu mainMenu = GameObject.Find("Game Manager").GetComponent<MainMenu>();
+        
         resumeButton.onClick.AddListener(Unpause);
         quitButton.onClick.AddListener(EndGame);
         settingsButton.onClick.AddListener(OpenSettings);
         backButton.onClick.AddListener(CloseSettings);
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetButtonDown("Pause"))
         {
             Debug.Log("P");

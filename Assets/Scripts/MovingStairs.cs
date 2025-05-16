@@ -10,7 +10,7 @@ public class MovingStairs : MonoBehaviour
     public float timer;
     float currentTime;
     PlayerMovement playerMovementScript;
-
+    private TimeManager time;
     // Start is called before the first frame update
     void Awake()
     {
@@ -20,11 +20,15 @@ public class MovingStairs : MonoBehaviour
 
 
     }
+    void Start()
+    {
+        time = GameObject.Find("Game Manager").GetComponent<TimeManager>();
 
+    }
     // Update is called once per frame
     void Update()
     {
-        if (playerMovementScript.timeStop == false)
+        if (!time.isStopped)
         {
                 MoveStairs();
         }
@@ -42,7 +46,7 @@ public class MovingStairs : MonoBehaviour
 
         transform.Translate(Vector3.right * speed * Time.deltaTime * direction);
 
-        if (playerMovementScript.timeStop == true)
+        if (time.isStopped)
         {
             speed = 0;
         } else 
