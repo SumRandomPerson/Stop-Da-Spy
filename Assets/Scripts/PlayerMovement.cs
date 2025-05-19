@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     
     public GameObject head;
     public GameObject projectilePrefab;
+    private GameObject gameManager;
     private MouseLook lookScript;
     private float timeAtLastStep;
     private TimeManager time;
@@ -63,7 +64,10 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         jumps = maxJumps;
-        time = GameObject.Find("Game Manager").GetComponent<TimeManager>();
+        gameManager = GameObject.Find("Game Manager");
+        time = gameManager.GetComponent<TimeManager>();
+        
+        
     }
 
     // Update is called once per frame
@@ -263,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
         }    
 
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1")&& gameManager.GetComponent<PauseScreen>().paused != true)
         {
             ShootProjectile();
         }

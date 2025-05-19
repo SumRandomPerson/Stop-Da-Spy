@@ -25,9 +25,9 @@ public class PauseScreen : MonoBehaviour
     
     
 
-    bool paused = false;
+    public bool paused = false;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
         resumeButton.onClick.AddListener(Unpause);

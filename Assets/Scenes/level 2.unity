@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 900778240404955488, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 900778240404955489, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -286,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900778240404955489, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7615.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 900778240404955489, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
       propertyPath: m_LocalRotation.w
@@ -314,6 +318,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900778240404955489, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900778240698730166, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900778240920503737, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900778240920503738, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2104082649}
+    - target: {fileID: 900778240920503738, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 900778241922931497, guid: 68f61307d512a4b5d8d253551122e436, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
