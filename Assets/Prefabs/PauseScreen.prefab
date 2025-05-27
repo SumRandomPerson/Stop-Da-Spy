@@ -454,7 +454,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4173dddc126ae4e9dab8db331cf1e5b6, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4173dddc126ae4e9dab8db331cf1e5b6, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -706,7 +706,7 @@ RectTransform:
   m_GameObject: {fileID: 900778241922931496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00000037448}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1441, y: 2.1441, z: 2.1441}
   m_Children: []
   m_Father: {fileID: 900778240584964339}
   m_RootOrder: 0
@@ -746,8 +746,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stop Da Spy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ea76c16caf41f4e0d8cf6afe0cab9698, type: 2}
+  m_sharedMaterial: {fileID: -3445214024451894908, guid: ea76c16caf41f4e0d8cf6afe0cab9698, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -879,7 +879,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4173dddc126ae4e9dab8db331cf1e5b6, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0

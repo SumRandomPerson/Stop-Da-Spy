@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22248
+  m_Name: pb_Mesh24988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2429,7 +2429,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22260
+  m_Name: pb_Mesh25008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3845,9 +3845,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 965891674}
     m_Modifications:
+    - target: {fileID: 3403856191005380413, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.23076923
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403856191005380413, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403856191005380413, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.23076923
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821098397935312533, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821098397935312533, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821098397935312533, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821098397940145153, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821098397940145153, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5821098398387361736, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
       propertyPath: m_Name
       value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821098398387361736, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5821098398387361739, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
       propertyPath: m_RootOrder
@@ -3891,6 +3927,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821098398387361739, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059707841155030573, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.23076923
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059707841155030573, guid: 98414a745ed574d22b4b465df67efadb, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
