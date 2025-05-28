@@ -6,16 +6,22 @@ public class TimeManager : MonoBehaviour
 {
     public bool isStopped = false;
     public bool stopCooldown = false;
+    public AudioClip timestopSound;
+    private AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
+        audio.clip = timestopSound;
     }
     IEnumerator StartTimer()
     {
         yield return new WaitForSeconds(3);
         StartCoroutine("StartCooldownTimer");
         ToggleTime();
+        audio.pitch = 2f;
+        audio.Play();
     }
     IEnumerator StartCooldownTimer()
     {
@@ -30,6 +36,8 @@ public class TimeManager : MonoBehaviour
             ToggleTime();
             StartCoroutine("StartTimer");
             stopCooldown = true;
+            audio.pitch = 1f;
+            audio.Play();
         }
     }
     public void ToggleTime()

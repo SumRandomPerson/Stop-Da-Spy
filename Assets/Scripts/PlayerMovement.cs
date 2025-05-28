@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     private MouseLook lookScript;
     private float timeAtLastStep;
     private TimeManager time;
+    private AudioSource audio;
+    public AudioClip[] clips;
     public enum State
     {
         Idle,
@@ -66,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         jumps = maxJumps;
         gameManager = GameObject.Find("Game Manager");
         time = gameManager.GetComponent<TimeManager>();
+        audio = GetComponent<AudioSource>();
         
         
     }
@@ -295,6 +298,8 @@ public class PlayerMovement : MonoBehaviour
     void ShootProjectile()
     {
         Instantiate(projectilePrefab, head.transform.position, head.transform.rotation);
+        audio.PlayOneShot(clips[0],1f);
+        
     }
     void OnTriggerEnter(Collider other)
     {
