@@ -293,7 +293,7 @@ MonoBehaviour:
   walkSounds: []
   timeBetweenSteps: 1
   head: {fileID: 2613587090419477000}
-  projectilePrefab: {fileID: 1967071401916857726, guid: 489b690b31749ee4e9bc69c7133d5375, type: 3}
+  projectilePrefab: {fileID: 919132149155446097, guid: f797886501e6e40e8a301c5b8426ccc4, type: 3}
   clips:
   - {fileID: 8300000, guid: af0d705dba1fd4644947e1d646362bac, type: 3}
   - {fileID: 8300000, guid: 9e8b84c66bdc7494893e28160f37a044, type: 3}

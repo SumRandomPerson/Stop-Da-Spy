@@ -5,7 +5,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private int damage = 2;
+    private float speed = 50f;
     private TimeManager time;
+    public GameObject collider;
     private bool delayed = true;
     
     // Start is called before the first frame update
@@ -26,8 +28,10 @@ public class Projectile : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         delayed = false;
+        collider.SetActive(true);
         
     }
+    
     void Update()
     {
         //allows bullets to move regardless of stopped time for a short while after creation
@@ -35,10 +39,10 @@ public class Projectile : MonoBehaviour
         {
             if(time.isStopped == false)
             {
-                transform.Translate(Vector3.forward*50 * Time.deltaTime);
+                transform.Translate(Vector3.forward*speed * Time.deltaTime);
             }
         }else{
-            transform.Translate(Vector3.forward*50 * Time.deltaTime);
+            transform.Translate(Vector3.forward*speed * Time.deltaTime);
         }
        
         
@@ -54,11 +58,13 @@ public class Projectile : MonoBehaviour
     {
         if(other.CompareTag("Enemy")&&time.isStopped == false)
         {
+            speed = 0;
             DealDamageTo(other.gameObject);
-            Destroy(gameObject);
+            gameObject.transform.SetParent(other.gameObject.transform);
             Debug.Log("hit");
         }
         
     }
+   
     
 }
